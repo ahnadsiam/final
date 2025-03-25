@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Appointment Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Book an Appointment</h1>
+    
+    <form id="appointment-form" action="/submit-appointment" method="post" novalidate>
+      
+      <div class="form-group">
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" name="full_name" autocomplete="name" required>
+        <div class="error-message" aria-live="polite" role="alert"></div>
+      </div>
+      
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="date_of_birth" max="2025-03-26" required>
+        <div class="error-message" aria-live="polite" role="alert"></div>
+      </div>
+      
+      <fieldset class="form-group">
+        <legend>Gender:</legend>
+        <div class="form-group inline">
+          <input type="radio" id="male" name="gender" value="male" required>
+          <label for="male">Male</label>
+        </div>
+        <div class="form-group inline">
+          <input type="radio" id="female" name="gender" value="female" required>
+          <label for="female">Female</label>
+        </div>
+        <div class="form-group inline">
+          <input type="radio" id="other" name="gender" value="other" required>
+          <label for="other">Other</label>
+        </div>
+        <div class="error-message" aria-live="polite" role="alert"></div>
+      </fieldset>
+      
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone_number" autocomplete="tel" required>
+        <div class="error-message" aria-live="polite" role="alert"></div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email_address" autocomplete="email" required>
+        <div class="error-message" aria-live="polite" role="alert"></div>
+      </div>
+      
+      <div class="form-group">
+        <label for="appointment-date">Preferred Appointment Date:</label>
+        <input type="date" id="appointment-date" name="appointment_date" 
+               min="2025-03-27" max="2025-08-31" required>
+        <div class="error-message" aria-live="polite" role="alert"></div>
+      </div>
+      
+      <div class="form-group">
+        <label for="appointment-time">Preferred Time Slot:</label>
+        <select id="appointment-time" name="appointment_time" required>
+          <option value="">Select a time slot</option>
+          <option value="morning">Morning (9 AM - 12 PM)</option>
+          <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
+          <option value="evening">Evening (4 PM - 7 PM)</option>
+        </select>
+        <div class="error-message" aria-live="polite" role="alert"></div>
+      </div>
+      
+      <div class="form-group">
+        <label for="doctor">Preferred Doctor:</label>
+        <select id="doctor" name="preferred_doctor" required>
+          <option value="">Select a doctor</option>
+          <option value="dr_smith">Dr. John Smith</option>
+          <option value="dr_jones">Dr. Emily Jones</option>
+          <option value="dr_taylor">Dr. Michael Taylor</option>
+        </select>
+        <div class="error-message" aria-live="polite" role="alert"></div>
+      </div>
+      
+      <div class="form-group">
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" name="additional_notes" rows="4" 
+                  placeholder="Enter any specific concerns or requests here...">
+        </textarea>
+      </div>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+  
+  <script src="script.js"></script>
+</body>
+</html>
